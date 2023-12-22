@@ -27,3 +27,10 @@ function displayBooks(myLibrary) {  // display each book of myLibrary on page
 }
 
 // document query selector all for nodelist, then iterate through nodelist
+
+const bookForm = document.getElementById('book-form');
+const addButton = document.querySelector('.add-button');
+
+addButton.addEventListener('click', () => {
+    bookForm.showModal();
+})

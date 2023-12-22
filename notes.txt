@@ -1,6 +1,6 @@
 Doing:
-Determine card layout
-
+Form submission
 
 To do:
-Test for if implicit grid allows additional cards
+Style form
+Make form update html using script

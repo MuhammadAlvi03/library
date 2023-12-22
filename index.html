@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -15,7 +15,6 @@
         <div class="header">
             <div class="title">Library</div>
         </div>
-        <div class="main">
             <div class="lib">
                 <div class="card">
                     <div class="info">
@@ -24,9 +23,37 @@
                         <div class="pages">1312 pages</div>
                     </div>
                     <div class="status">read</div>
+                    <img class="remove-button" src="./icons/close_FILL0_wght400_GRAD0_opsz24.svg" alt="remove">
                 </div>
-            </div>
+                <div class="add-card">
+                    <img class="add-button" src="./icons/add_circle_FILL0_wght400_GRAD0_opsz24.svg" alt="add"> 
+                </div>
         </div>
     </div>
+     <dialog id="book-form">
+        <form method="dialog">
+            <p>
+                <label for="book-title">Book Title</label>
+                <input type="text" name="book-title" id="book-title">
+            </p>
+            <p>
+                <label for="book-author">Author</label>
+                <input type="text" name="book-author" id="book-author">
+            </p>
+            <p>
+                <label for="book-pages">Page Count</label>
+                <input type="number" name="book-pages" id="book-pages">
+            </p>
+            <p>
+                <label for="read">Read</label>
+                <input type="radio" name="book-read" id="read">
+                <label for="not-read">Unread</label>
+                <input type="radio" name="book-read" id="not-read"> 
+            </p>
+            <p>
+                <button type="submit">Add Book</button>
+            </p>
+        </form>
+     </dialog>
 </body>
 </html>
