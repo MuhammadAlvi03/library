@@ -34,15 +34,15 @@
         <form method="dialog">
             <p>
                 <label for="book-title">Book Title</label>
-                <input type="text" name="book-title" id="book-title">
+                <input type="text" name="book-title" id="book-title" required>
             </p>
             <p>
                 <label for="book-author">Author</label>
-                <input type="text" name="book-author" id="book-author">
+                <input type="text" name="book-author" id="book-author" required>
             </p>
             <p>
-                <label for="book-pages">Page Count</label>
-                <input type="number" name="book-pages" id="book-pages">
+                <label for="book-length">Book Length</label>
+                <input type="number" name="book-length" id="book-length" required>
             </p>
             <p>
                 <label for="read">Read</label>
@@ -51,7 +51,7 @@
                 <input type="radio" name="book-read" id="not-read"> 
             </p>
             <p>
-                <button type="submit">Add Book</button>
+                <button type="submit" onclick="createBook()">Add Book</button> 
             </p>
         </form>
      </dialog>
