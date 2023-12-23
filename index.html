@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,33 +17,24 @@
             <div class="title">Library</div>
         </div>
             <div class="lib">
-                <div class="card">
-                    <div class="info">
-                        <div class="name">'a tale of awesome adventures and amazing fantasy'</div>
-                        <div class="author">by Johnathan Kirk</div>
-                        <div class="pages">1312 pages</div>
-                    </div>
-                    <div class="status">read</div>
-                    <img class="remove-button" src="./icons/close_FILL0_wght400_GRAD0_opsz24.svg" alt="remove">
-                </div>
                 <div class="add-card">
                     <img class="add-button" src="./icons/add_circle_FILL0_wght400_GRAD0_opsz24.svg" alt="add"> 
                 </div>
         </div>
     </div>
      <dialog id="book-form">
-        <form method="dialog">
+        <form method="dialog" id="book-form-menu">
             <p>
                 <label for="book-title">Book Title</label>
-                <input type="text" name="book-title" id="book-title" required>
+                <input type="text" name="book-title" id="book-title" required autocomplete="off">
             </p>
             <p>
                 <label for="book-author">Author</label>
-                <input type="text" name="book-author" id="book-author" required>
+                <input type="text" name="book-author" id="book-author" required autocomplete="off">
             </p>
             <p>
                 <label for="book-length">Book Length</label>
-                <input type="number" name="book-length" id="book-length" required>
+                <input type="number" name="book-length" id="book-length" required min="1">
             </p>
             <p>
                 <label for="read">Read</label>

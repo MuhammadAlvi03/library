@@ -42,7 +42,7 @@ function displayBooks(myLibrary) {  // display each book of myLibrary on page
         newCard.append(newInfo, removeButton, newStatus);
         newInfo.append(newTitle, newAuthor, newPages,);
         
-        newTitle.textContent = `"${myLibrary[i].title}"`;
+        newTitle.textContent = `${myLibrary[i].title}`;
         newAuthor.textContent = `by ${myLibrary[i].author}`;
         newPages.textContent = `${myLibrary[i].pages} pages`;
         if (myLibrary[i].readStatus === true) {
@@ -95,13 +95,18 @@ const newBookTitle = document.getElementById('book-title');
 const newBookAuthor = document.getElementById('book-author');
 const newBookPages = document.getElementById('book-length');
 const newBookRead = document.getElementById('read');
+const bookFormMenu = document.getElementById('book-form-menu');
+
 
 let newBook;
 
 function createBook() {
-    let title = newBookTitle.value;
-    let author = newBookAuthor.value;
-    let pages = newBookAuthor.value;
+
+
+
+    let title = newBookTitle.value || 'No title';
+    let author = newBookAuthor.value || 'Unkown Author';
+    let pages = newBookPages.value || 0;
     let readStatus = newBookRead.checked;
 
     let newBook = new Book(title, author, pages, readStatus);
@@ -109,6 +114,9 @@ function createBook() {
 
     addBookToLibrary(newBook);
     displayBooks(myLibrary);
+
+    bookFormMenu.reset();
+    bookForm.close();
 }
 
 addButton.addEventListener('click', () => {

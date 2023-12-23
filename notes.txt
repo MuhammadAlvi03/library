@@ -1,6 +1,4 @@
 Doing:
-Style card text
+
 
 To do:
-Style form
-Prevent wrong form submissions
