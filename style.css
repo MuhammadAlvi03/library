@@ -78,12 +78,11 @@ body {
     display: grid;
     grid-template-rows: 5fr 1fr;
     position: relative;
-    box-shadow: green 0px 0px 9px 2px;;
 }
 
 .add-card:hover,
 .card:hover {
-    animation: cards 0.25s ease-in forwards;
+    animation: cards 0.2s ease-in forwards;
 }
 
 @keyframes cards {
@@ -155,4 +154,14 @@ body {
     -moz-transform: translateX(-50%) translateY(-50%);
     -ms-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
+}
+
+.status {
+    border-radius: 1rem;
+    border: 1px rgb(0, 0, 0) solid;
+}
+
+.status:hover {
+    cursor: pointer;
+    background-color: rgb(188, 188, 188);
 }

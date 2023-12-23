@@ -28,31 +28,51 @@ function displayBooks(myLibrary) {  // display each book of myLibrary on page
 
     for (let i = 0; i < myLibrary.length; i++) {
         let newCard = document.createElement('div'); newCard.className = 'card';
+        newCard.dataset.index = i;
         let newInfo = document.createElement('div'); newInfo.className = 'info';
         let newStatus = document.createElement('div'); newStatus.className = 'status';
 
         let removeButton = document.createElement('img'); removeButton.className = 'remove-button';
         removeButton.src = './icons/close_FILL0_wght400_GRAD0_opsz24.svg'
 
-        removeButton.addEventListener('click', () => {
-            removeButton.parentNode.parentNode.removeChild(removeButton.parentNode);
-            myLibrary.splice(myLibrary.indexOf(removeButton.parentNode + 1) , 1);
-        })
-
+        
         let newTitle = document.createElement('div'); newTitle.className = 'name';
         let newAuthor = document.createElement('div'); newAuthor.className = 'author';
         let newPages = document.createElement('div'); newPages.className = 'pages';
-        newCard.append(newInfo, newStatus, removeButton);
+        newCard.append(newInfo, removeButton, newStatus);
         newInfo.append(newTitle, newAuthor, newPages,);
-
+        
         newTitle.textContent = `"${myLibrary[i].title}"`;
         newAuthor.textContent = `by ${myLibrary[i].author}`;
         newPages.textContent = `${myLibrary[i].pages} pages`;
         if (myLibrary[i].readStatus === true) {
             newStatus.textContent = 'Read';
+            newCard.style.boxShadow = '0px 0px 9px 2px green';
         } else {
             newStatus.textContent = 'Not read';
         }
+        
+        // reference to myLib index not working
+        removeButton.addEventListener('click', () => {
+            let thisIndex = removeButton.parentNode.dataset.index;
+            removeButton.parentNode.parentNode.removeChild(removeButton.parentNode);
+            myLibrary.splice(thisIndex , 1);
+            displayBooks(myLibrary);
+        })
+
+        newStatus.addEventListener('click', () => {
+            let thisIndex;
+            thisIndex = (newStatus.parentNode.dataset.index);
+            console.log(newStatus);
+            console.log(thisIndex);
+            if (myLibrary[thisIndex].readStatus) {
+                myLibrary[thisIndex].readStatus = false;
+            } else {
+                myLibrary[thisIndex].readStatus = true;
+            }
+            displayBooks(myLibrary);
+            })
+
         libDisplay.appendChild(newCard);
     }
 

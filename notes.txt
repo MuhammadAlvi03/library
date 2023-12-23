@@ -1,6 +1,6 @@
 Doing:
-Form submission
+Style card text
 
 To do:
 Style form
-Make form update html using script
+Prevent wrong form submissions
